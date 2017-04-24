@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Qubes OS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Qubes OS</h1>
+  <p class="subtitle">CryptoRave Brasil</p>
+  <p class="date">2017/05/06</p>
+</section>
+
+<section id="segurança" class="slide level1">
+<h1>Segurança?</h1>
+<p>Formas de contaminação não faltam:</p>
+<ul>
+<li>Navegando sites</li>
+<li>Instalando programas</li>
+<li>Vendo e-mails e anexos</li>
+<li>Abrindo arquivos (docx, pdf etc)</li>
+<li>Acessando pendrives (usb)</li>
+<li>Via rede (wifi, internet)</li>
+</ul>
+</section>
+<section id="solução" class="slide level1">
+<h1>Solução!</h1>
+<ul>
+<li>Instalar só <em>software livres</em> auditados?</li>
+<li>Acessar só sites &quot;confiáveis&quot;?</li>
+<li>Desligar <em>javascript</em> do navegador?</li>
+<li>Ver e-mails só como texto?</li>
+<li>Não abrir anexos?</li>
+<li>Usar antivírus?</li>
+<li>Não ter placa wifi?</li>
+<li>Não acessar a internet?</li>
+</ul>
+</section>
+<section id="abordagem-qubes" class="slide level1">
+<h1>Abordagem Qubes</h1>
+<p><strong>Isolamento + Integração = Compartimentalização!</strong></p>
+<ul>
+<li>Divisão do computador em domínios (trabalho, pessoal, banco, cofre etc)</li>
+<li>Se um domínio for contaminado, os outros não são afetados</li>
+</ul>
+</section>
+<section id="qubes" class="slide level1">
+<h1>Qubes</h1>
+<ul>
+<li><em>Sistema Operacional</em></li>
+<li>Concebido por Joanna Rutkowska
+<ul>
+<li>pesquisadora de segurança polônesa</li>
+<li><a href="https://invisiblethingslab.com">Invisible Things Lab</a></li>
+</ul></li>
+<li>Software Livre</li>
+<li>Desenvolvido desde 2010</li>
+<li>Enfoque tanto em segurança como usabilidade</li>
+<li>&quot;Distro <em>Xen</em>&quot;, e não Linux</li>
+</ul>
+</section>
+<section id="o-que-traz-de-novo" class="slide level1">
+<h1>O que traz de novo?</h1>
+<ul>
+<li>UNIX já isolava usuários e grupos</li>
+<li>Android isola aplicativos (múltiplas permissões)</li>
+</ul>
+<p>Com Qubes isolamento sai do <em>kernel</em> e vai para um <em>hypervisor</em> (<em>Xen</em>)</p>
+<ul>
+<li>Isolamento via <em>máquinas virtuais</em></li>
+<li>Hypervisor usa <em>microkernel</em></li>
+</ul>
+</section>
+<section id="domínios" class="slide level1 no-title">
+<h1>Domínios</h1>
+<p><a href="https://en.wikipedia.org/wiki/Qubes_OS"><img src="imgs/vms.png" height="650" /></a></p>
+</section>
+<section id="templates-e-appvms" class="slide level1">
+<h1>Templates e AppVMs</h1>
+<p>Sistema de <em>TemplateVMs</em> facilita manutenção das máquinas virtuais.</p>
+<p>Máquinas virtuais podem rodar múltiplos sistemas operacionais.</p>
+<ul>
+<li>Fedora</li>
+<li>Debian</li>
+<li>Arch Linux</li>
+<li>Ubuntu</li>
+<li><em>Whonix</em></li>
+</ul>
+</section>
+<section id="até-windows..." class="slide level1">
+<h1>Até Windows...</h1>
+<figure>
+<img src="imgs/win.png" width="900" />
+</figure>
+</section>
+<section id="ambiente-gráfico-convencional" class="slide level1">
+<h1>Ambiente Gráfico Convencional</h1>
+<ul>
+<li>Sistemas operacionais geralmente permitem que qualquer programa capture teclas apertadas, área de transferência, tela etc.</li>
+<li>Não protege contra coisas do tipo...</li>
+</ul>
+</section>
+<section id="fake" class="slide level1 no-title">
+<h1>Fake!</h1>
+<figure>
+<img src="imgs/fake.jpg" height="650" />
+</figure>
+</section>
+<section id="marcas-nas-janelas" class="slide level1">
+<h1>Marcas nas Janelas</h1>
+<figure>
+<img src="imgs/true.png" width="900" />
+</figure>
+</section>
+<section id="janelas-isoladas-mas-integradas" class="slide level1">
+<h1>Janelas isoladas mas integradas</h1>
+<ul>
+<li>Uso de bordas coloridas</li>
+<li>Proteção da <em>área de transferência</em>
+<ul>
+<li>Focar janela e ctrl+shift+c/v</li>
+</ul></li>
+<li>Cada aplicação só acessa janelas, teclado e mouse do seu domínio</li>
+</ul>
+</section>
+<section id="mapa-de-rede" class="slide level1 no-title">
+<h1>Mapa de Rede</h1>
+<p><a href="http://theinvisiblethings.blogspot.com.br/2011/09/playing-with-qubes-networking-for-fun.html"><img src="imgs/net.png" height="650" /></a></p>
+</section>
+<section id="rede" class="slide level1">
+<h1>Rede</h1>
+<ul>
+<li>Isola <em>driver</em> wifi</li>
+<li><em>Firewall</em> personalizável</li>
+<li>Domínios podem não ter acesso à rede</li>
+<li>Whonix permite obrigar tráfego via <em>TOR</em></li>
+</ul>
+</section>
+<section id="máquinas-descartáveis" class="slide level1">
+<h1>Máquinas descartáveis</h1>
+<p>Máquinas virtuais que iniciam rápido e são destruídas quando fechadas.</p>
+<p>Úteis para abrir aquivos ou rodar programas inseguros.</p>
+</section>
+<section id="outras-características" class="slide level1">
+<h1>Outras características</h1>
+<ul>
+<li>Fácil instalação</li>
+<li>Sistema de arquivos encriptado por padrão</li>
+<li>Protege transferência de arquivos entre domínios</li>
+<li>Versão atual usa <em>Fedora</em> e <em>XFCE</em> no <em>dom0</em></li>
+<li>Super usuários sem senha nas VMs</li>
+<li>Isola USB</li>
+</ul>
+</section>
+<section id="pontos-negativos" class="slide level1">
+<h1>Pontos negativos</h1>
+<ul>
+<li>Não resolve tudo</li>
+<li>Necessidade de dividir sua vida digital em domínios</li>
+<li>Sem aceleração gráfica (ex.: <em>OpenGL</em>)</li>
+<li>Possível aumento de complexidade</li>
+<li>Possivelmente mais lento (recomendam <em>SSD</em>)</li>
+<li><a href="https://www.qubes-os.org/hcl">Não roda em todas as máquinas</a></li>
+</ul>
+</section>
+<section id="terminando..." class="slide level1">
+<h1>Terminando...</h1>
+<ul>
+<li><a href="https://psc2015videos.projectbullrun.org">Apresentação da Joanna</a></li>
+<li><a href="https://www.qubes-os.org">Site do Qubes</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/qubes-users">Lista de e-mails</a></li>
+</ul>
+</section>
+<section id="fim" class="slide level1">
+<h1>Fim</h1>
+<p><strong>Obrigado!</strong></p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    <style type="text/css">
+  em {
+  	color: #dc322f;
+  }
+  .reveal h1 {
+  	font-size: 2.5em;
+  }
+  .minimal-title > h1 {
+  	font-size: 1em;
+  }
+  .no-title > h1 {
+  	display: none;
+  }
+  </style>
+    </body>
+</html>

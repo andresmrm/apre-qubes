@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Qubes OS</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Qubes OS</h1>
+<h1 class="subtitle">CryptoRave Brasil</h1>
+<h3 class="date">2017/05/06</h3>
+</div>
+<h1 id="segurança">Segurança?</h1>
+<p>Formas de contaminação não faltam:</p>
+<ul>
+<li>Navegando sites</li>
+<li>Instalando programas</li>
+<li>Vendo e-mails e anexos</li>
+<li>Abrindo arquivos (docx, pdf etc)</li>
+<li>Acessando pendrives (usb)</li>
+<li>Via rede (wifi, internet)</li>
+</ul>
+<h1 id="solução">Solução!</h1>
+<ul>
+<li>Instalar só <em>software livres</em> auditados?</li>
+<li>Acessar só sites &quot;confiáveis&quot;?</li>
+<li>Desligar <em>javascript</em> do navegador?</li>
+<li>Ver e-mails só como texto?</li>
+<li>Não abrir anexos?</li>
+<li>Usar antivírus?</li>
+<li>Não ter placa wifi?</li>
+<li>Não acessar a internet?</li>
+</ul>
+<h1 id="abordagem-qubes">Abordagem Qubes</h1>
+<p><strong>Isolamento + Integração = Compartimentalização!</strong></p>
+<ul>
+<li>Divisão do computador em domínios (trabalho, pessoal, banco, cofre etc)</li>
+<li>Se um domínio for contaminado, os outros não são afetados</li>
+</ul>
+<h1 id="qubes">Qubes</h1>
+<ul>
+<li><em>Sistema Operacional</em></li>
+<li>Concebido por Joanna Rutkowska
+<ul>
+<li>pesquisadora de segurança polônesa</li>
+<li><a href="https://invisiblethingslab.com">Invisible Things Lab</a></li>
+</ul></li>
+<li>Software Livre</li>
+<li>Desenvolvido desde 2010</li>
+<li>Enfoque tanto em segurança como usabilidade</li>
+<li>&quot;Distro <em>Xen</em>&quot;, e não Linux</li>
+</ul>
+<h1 id="o-que-traz-de-novo">O que traz de novo?</h1>
+<ul>
+<li>UNIX já isolava usuários e grupos</li>
+<li>Android isola aplicativos (múltiplas permissões)</li>
+</ul>
+<p>Com Qubes isolamento sai do <em>kernel</em> e vai para um <em>hypervisor</em> (<em>Xen</em>)</p>
+<ul>
+<li>Isolamento via <em>máquinas virtuais</em></li>
+<li>Hypervisor usa <em>microkernel</em></li>
+</ul>
+<h1 id="domínios" class="no-title">Domínios</h1>
+<p><a href="https://en.wikipedia.org/wiki/Qubes_OS"><img src="imgs/vms.png" height="650" /></a></p>
+<h1 id="templates-e-appvms">Templates e AppVMs</h1>
+<p>Sistema de <em>TemplateVMs</em> facilita manutenção das máquinas virtuais.</p>
+<p>Máquinas virtuais podem rodar múltiplos sistemas operacionais.</p>
+<ul>
+<li>Fedora</li>
+<li>Debian</li>
+<li>Arch Linux</li>
+<li>Ubuntu</li>
+<li><em>Whonix</em></li>
+</ul>
+<h1 id="até-windows...">Até Windows...</h1>
+<div class="figure">
+<img src="imgs/win.png" width="900" />
+
+</div>
+<h1 id="ambiente-gráfico-convencional">Ambiente Gráfico Convencional</h1>
+<ul>
+<li>Sistemas operacionais geralmente permitem que qualquer programa capture teclas apertadas, área de transferência, tela etc.</li>
+<li>Não protege contra coisas do tipo...</li>
+</ul>
+<h1 id="fake" class="no-title">Fake!</h1>
+<div class="figure">
+<img src="imgs/fake.jpg" height="650" />
+
+</div>
+<h1 id="marcas-nas-janelas">Marcas nas Janelas</h1>
+<div class="figure">
+<img src="imgs/true.png" width="900" />
+
+</div>
+<h1 id="janelas-isoladas-mas-integradas">Janelas isoladas mas integradas</h1>
+<ul>
+<li>Uso de bordas coloridas</li>
+<li>Proteção da <em>área de transferência</em>
+<ul>
+<li>Focar janela e ctrl+shift+c/v</li>
+</ul></li>
+<li>Cada aplicação só acessa janelas, teclado e mouse do seu domínio</li>
+</ul>
+<h1 id="mapa-de-rede" class="no-title">Mapa de Rede</h1>
+<p><a href="http://theinvisiblethings.blogspot.com.br/2011/09/playing-with-qubes-networking-for-fun.html"><img src="imgs/net.png" height="650" /></a></p>
+<h1 id="rede">Rede</h1>
+<ul>
+<li>Isola <em>driver</em> wifi</li>
+<li><em>Firewall</em> personalizável</li>
+<li>Domínios podem não ter acesso à rede</li>
+<li>Whonix permite obrigar tráfego via <em>TOR</em></li>
+</ul>
+<h1 id="máquinas-descartáveis">Máquinas descartáveis</h1>
+<p>Máquinas virtuais que iniciam rápido e são destruídas quando fechadas.</p>
+<p>Úteis para abrir aquivos ou rodar programas inseguros.</p>
+<h1 id="outras-características">Outras características</h1>
+<ul>
+<li>Fácil instalação</li>
+<li>Sistema de arquivos encriptado por padrão</li>
+<li>Protege transferência de arquivos entre domínios</li>
+<li>Versão atual usa <em>Fedora</em> e <em>XFCE</em> no <em>dom0</em></li>
+<li>Super usuários sem senha nas VMs</li>
+<li>Isola USB</li>
+</ul>
+<h1 id="pontos-negativos">Pontos negativos</h1>
+<ul>
+<li>Não resolve tudo</li>
+<li>Necessidade de dividir sua vida digital em domínios</li>
+<li>Sem aceleração gráfica (ex.: <em>OpenGL</em>)</li>
+<li>Possível aumento de complexidade</li>
+<li>Possivelmente mais lento (recomendam <em>SSD</em>)</li>
+<li><a href="https://www.qubes-os.org/hcl">Não roda em todas as máquinas</a></li>
+</ul>
+<h1 id="terminando...">Terminando...</h1>
+<ul>
+<li><a href="https://psc2015videos.projectbullrun.org">Apresentação da Joanna</a></li>
+<li><a href="https://www.qubes-os.org">Site do Qubes</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/qubes-users">Lista de e-mails</a></li>
+</ul>
+<h1 id="fim">Fim</h1>
+<p><strong>Obrigado!</strong></p>
+</body>
+</html>
