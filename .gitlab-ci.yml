@@ -6,7 +6,7 @@ pages:
   - echo 'Nothing to do...'
   artifacts:
     paths:
-    - reveal.js
+    - reveal.js/
     - index.html
     - pagina.html
   only:
