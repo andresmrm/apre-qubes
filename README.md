@@ -8,4 +8,6 @@ Apresentação sobre Qubes OS.
 
 # Compilar
 
+Precisa de pandoc.
+
 	./run.sh

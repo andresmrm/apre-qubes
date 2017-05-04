@@ -120,6 +120,7 @@ Máquinas virtuais que iniciam rápido e são destruídas quando fechadas.
 - Protege transferência de arquivos entre domínios
 - Versão atual usa *Fedora* e *XFCE* no *dom0*
 - Super usuários sem senha nas VMs
+- Controla câmera e microfone
 - Isola USB
 
 # Pontos negativos
